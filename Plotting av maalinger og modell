@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+R = 15000  
+C = 100 * 10**(-6) 
+
+t = np.linspace(0, 10, 1000)
+
+v_t = 8 - 8 * np.exp(-t / (R * C))
+
+plt.plot(t, v_t, label="Teoretisk spenning v(t)")
+
+plt.scatter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [3.8, 5.7, 6.74, 7.26, 7.54, 7.65, 7.73, 7.76, 7.78, 7.79], 
+            color="red", label="Målte verdier")  
+
+plt.xlabel("Tid (s)")
+plt.ylabel("Spenning (V)")
+plt.title("Spenning over kondensator i RC-krets")
+plt.legend()
+plt.grid()
+plt.show()
